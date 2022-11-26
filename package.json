@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
-  "scripts": {
+	"scripts": {
 		"dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
 		"build": "tsc",
 		"typeorm": "typeorm-ts-node-commonjs",
