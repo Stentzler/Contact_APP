@@ -7,6 +7,12 @@ export interface IContactRequest {
 	phone?: string;
 }
 
+export interface IContactUpdate {
+	fullName?: string;
+	email?: string;
+	mobilePhone?: string;
+	phone?: string;
+}
 export interface IContactResponse {
 	id: string;
 	fullName: string;
