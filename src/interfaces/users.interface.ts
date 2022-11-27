@@ -15,3 +15,20 @@ export interface IUserResponse {
 	isActive: boolean;
 	createdAt: Date;
 }
+
+export interface IUserUpdate {
+	fullName?: string;
+	email?: string;
+	password?: string;
+	mobilePhone?: string;
+	phone?: string;
+}
+
+export interface IUserLogin {
+	email: string;
+	password: string;
+}
+
+export interface IUserTokenResponse {
+	token: string;
+}
