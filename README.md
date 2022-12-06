@@ -1,8 +1,14 @@
 # APP_AGENDA BACKEND REPOSITORY
 
-## NODE + POSTGRES API
+## Tecnologias utilizadas:
 
-## Instalation:
+- TypeScript
+- Node.JS
+- Express
+- TypeORM
+- PostgreSQL
+
+## Instalação:
 
 ### Criando Postgres Database:
 
