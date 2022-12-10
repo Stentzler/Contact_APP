@@ -8,4 +8,4 @@ RUN yarn
 
 COPY . .
 
-ENTRYPOINT [ "./startup.sh" ]
+CMD ["yarn", "dev"]

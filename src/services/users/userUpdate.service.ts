@@ -2,7 +2,7 @@ import AppDataSource from '../../data-source';
 import {Users} from '../../entities/users.entities';
 import {AppError} from '../../errors/AppError';
 import {IUserUpdate} from '../../interfaces/users.interface';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 const userUpdateService = async (
 	id: string,

@@ -6,27 +6,36 @@ services:
     build: .
     ports:
       - 3001:3001
-    env_file:
-      - .env
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=m6_full_stack
+      - DB_HOST=database
+      - SECRET_KEY=hexa
     depends_on:
-      db:
+      database:
         condition: service_healthy
     volumes:
       - .:/app
-      - /app/node_modules
 
-  db:
-    container_name: db_node_m6
+  database:
+    container_name: database
     image: postgres:latest
     ports:
       - 5431:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=m6_s3
+      - POSTGRES_DB=m6_full_stack
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres -d m6_s3']
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d m6_full_stack']
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 5s
+    volumes:
+      - database-data:/var/lib/postgresql/data
+
+volumes:
+  database-data:
+    driver: local
